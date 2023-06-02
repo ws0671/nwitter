@@ -12,9 +12,8 @@ const Home = () => {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
   const getNweets = async () => {
-    const q = query(collection(dbService, "nweets"));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((document) => {
+    const dbNweets = await getDocs(collection(dbService, "nweets"));
+    dbNweets.forEach((document) => {
       const nweetObject = {
         ...document.data(),
         id: document.id,
