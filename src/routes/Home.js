@@ -5,7 +5,6 @@ import {
   collection,
   serverTimestamp,
   getDocs,
-  query,
 } from "firebase/firestore";
 
 const Home = () => {
