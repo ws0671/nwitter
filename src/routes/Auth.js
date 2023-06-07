@@ -35,7 +35,6 @@ const Auth = () => {
       } else {
         data = await signInWithEmailAndPassword(auth, email, password);
       }
-      console.log(data);
     } catch (error) {
       switch (error.code) {
         case "auth/user-not-found" || "auth/wrong-password":
@@ -68,7 +67,6 @@ const Auth = () => {
       provider = new GithubAuthProvider();
     }
     const data = await signInWithPopup(authService, provider);
-    console.log(data);
   };
 
   return (
